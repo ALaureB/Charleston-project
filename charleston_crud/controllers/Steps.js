@@ -2,13 +2,25 @@ const Model = require('../models/');
 
 module.exports = {
 	
-	find : (req, res) => {
+	findAll : (req, res) => {
 		Model.Step
 			.findAll()
 			.then(results => res.send(results));
 	},
 
+	find : (req, res) => {
+		let id = req.params.id;		
+		Model.Step
+			.find({where : {id : id}})
+			.then(results => res.send(results));
+	},
+
 	create : (req, res) => {		
+		let name = req.body.name;
+		let description = req.body.description;
+		let image = req.body.image;
+		let video = req.body.video;		
+
 		Model.Step
 			.create(
 				{
