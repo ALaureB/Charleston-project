@@ -13,10 +13,11 @@ class Step extends Component {
   }
 
   handleDelete(event){
+    event.preventDefault();
     Axios
       .post(`http://localhost:3000/delete/${this.state.id}`)
       .then(function (response) {
-        console.log(response);
+        this.props.updatingData();
       })
       .catch(function (error) {
         console.log(error);

@@ -1,0 +1,26 @@
+$font1 : 'Sriracha', cursive;
+$font2 : 'Zilla Slab Highlight', cursive;
+
+body {
+  font-family: $font1;
+  text-align: center;
+}
+
+h1 {
+  font-family: $font2;
+  font-weight: 700;
+  color : white;
+  font-size: 6em;
+  margin-top: 0px;
+  text-align: center;
+  position: relative;
+  top: 300px;
+}
+
+h2 {
+  font-size: large;
+}
+
+h3 {
+  font-family: $font2;
+}

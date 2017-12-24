@@ -1,32 +1,67 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 import gif from './img/giphy-charleston.gif';
-import './App.css';
-import Steps from './components/Steps';
+import './stylesheets/App.css';
+import Step from './components/Step';
 import CreateStep from './components/CreateStep';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
 
-        <header className="App-header">
-          <h1>Charleston steps</h1>
-        </header>
+	constructor(props) {
+		super(props);
+		this.state = {
+			items:[]
+		};
+	}
 
-        <h2>
-          <span role="img" aria-label="Shoes">👞👞👞</span> Embark with us on a magical journey into charleston... <span role="img" aria-label="Shoes">👞👞👞</span>
-        </h2>
+	update(){
+		Axios
+			.get('http://localhost:3000/')
+			.then(response => {
+				this.setState({
+					items: response.data
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
 
-        <p>
-          <img src={gif} alt="loading..." />
-        </p>
+	componentDidMount() {
+		this.update();
+		setInterval(()=>{
+			this.update()
+		}, 1000);
+	}
 
-        <Steps />
+	handleDemand(){
+		this.update();
+	}
 
-        <CreateStep/>
+	render() {
+		return (
+	  		<div className="App">
 
-      </div>
-    );
+				<header className="App-header">
+					<h1>Charleston steps</h1>
+				</header>
+
+				<h2>
+					<span role="img" aria-label="Shoes">👞👞👞</span> Embark with us on a magical journey into charleston... <span role="img" aria-label="Shoes">👞👞👞</span>
+				</h2>
+
+				<p>
+					<img src={gif} alt="loading..." />
+				</p>
+
+				<div>
+					{this.state.items.map(item => <Step id={item.id} name={item.name} description={item.description} image={item.image} video={item.video} updatingData={this.handleDemand.bind(this)} />)}
+					<CreateStep add={this.handleDemand.bind(this)}/>
+
+				</div>
+
+			</div>
+	);
   }
 }
 

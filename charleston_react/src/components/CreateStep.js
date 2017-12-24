@@ -17,9 +17,10 @@ class CreateStep extends Component {
 
   handleChange (event) {
     this.setState({ [event.target.name]: event.target.value });
-  }
+  }ß
 
   handleSubmit(event) {
+    event.preventDefault();
     Axios
       .post('http://localhost:3000/create', {
         name: this.state.name,
@@ -28,7 +29,7 @@ class CreateStep extends Component {
         video : this.state.video
       })
       .then(function (response) {
-        console.log(response);
+        this.props.updatingData();
       })
       .catch(function (error) {
         console.log(error);
