@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import gif from './img/giphy-charleston.gif';
 import './stylesheets/App.css';
+import Header from './components/Header';
 import Step from './components/Step';
 import CreateStep from './components/CreateStep';
 
@@ -42,9 +43,7 @@ class App extends Component {
 		return (
 	  		<div className="App">
 
-				<header className="App-header">
-					<h1>Charleston steps</h1>
-				</header>
+				<Header />
 
 				<h2>
 					<span role="img" aria-label="Shoes">👞👞👞</span> Embark with us on a magical journey into charleston... <span role="img" aria-label="Shoes">👞👞👞</span>
