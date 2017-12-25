@@ -1,65 +1,33 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
-import gif from './img/giphy-charleston.gif';
 import './stylesheets/App.css';
-import Header from './components/Header';
-import Step from './components/Step';
-import CreateStep from './components/CreateStep';
+import { Route, BrowserRouter, Switch, NavLink } from 'react-router-dom';
+import Home from './components/Home';
+import Steps from './components/Steps';
+import Contact from './components/Contact';
 
 class App extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			items:[]
-		};
-	}
-
-	update(){
-		Axios
-			.get('http://localhost:3000/')
-			.then(response => {
-				this.setState({
-					items: response.data
-				});
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
-	}
-
-	componentDidMount() {
-		this.update();
-		setInterval(()=>{
-			this.update()
-		}, 1000);
-	}
-
-	handleDemand(){
-		this.update();
-	}
 
 	render() {
 		return (
-	  		<div className="App">
 
-				<Header />
 
-				<h2>
-					<span role="img" aria-label="Shoes">👞👞👞</span> Embark with us on a magical journey into charleston... <span role="img" aria-label="Shoes">👞👞👞</span>
-				</h2>
-
-				<p>
-					<img src={gif} alt="loading..." />
-				</p>
-
-				<div>
-					{this.state.items.map(item => <Step id={item.id} name={item.name} description={item.description} image={item.image} video={item.video} updatingData={this.handleDemand.bind(this)} />)}
-					<CreateStep add={this.handleDemand.bind(this)}/>
-
-				</div>
-
+	      <BrowserRouter>
+	      <div>
+	      				<div className="App-header">
+				<h1>Charleston steps</h1>
 			</div>
+	        <NavLink exact to="/" activeStyle={{fontWeight: 'bold', color: 'red'}}> Home </NavLink>
+	        <NavLink to="/steps" activeStyle={{fontWeight: 'bold', color: 'red'}}> Steps </NavLink>
+	        <NavLink to="/contact" activeStyle={{fontWeight: 'bold', color: 'red'}}> Contact </NavLink>
+
+	        <Switch>
+	          <Route path="/steps" component={Steps} />
+	          <Route path="/contact" component={Contact} />
+	          <Route exact path="/" component={Home} />          
+	        </Switch>
+	      </div>
+	      </BrowserRouter>
 	);
   }
 }
