@@ -2,44 +2,43 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import UpdateStep from './UpdateStep';
 
-
 class Step extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: this.props.id,
-    };
-    this.handleDelete = this.handleDelete.bind(this);
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			id: this.props.id,
+		};
+		this.handleDelete = this.handleDelete.bind(this);
+	}
 
-  handleDelete(event){
-    event.preventDefault();
-    Axios
-      .post(`http://localhost:3000/delete/${this.state.id}`)
-      .then(function (response) {
-        this.props.updatingData();
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+	handleDelete(event){
+		event.preventDefault();
+		Axios
+		.post(`http://localhost:3000/delete/${this.state.id}`)
+		.then(function (response) {
+			this.props.updatingData();
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
+	}
 
-  render() {
-    return (
-        <div className = "step">
-            <h3>{this.props.name}</h3>
-            <p>{this.props.description}</p>
-            <p>{this.props.id}</p>
-            <img src={`./img/{this.props.image}`} alt= {this.props.image}/>
-            <p>{this.props.video}</p>
-            <form onSubmit={this.handleDelete}>        
-              <input type="submit" value="Delete" />
-            </form>
+	render() {
+		return (
+			<div className ="step">
+				<h3>{this.props.name}</h3>
+				<p>{this.props.description}</p>
+				<img src={`./img/{this.props.image}`} alt= {this.props.image}/>
+				<p>{this.props.video}</p>
+				<form onSubmit={this.handleDelete}>        
+					<input type="submit" value="Delete" />
+				</form>
 
-            <UpdateStep />
-        </div>
-    );
-  }
+				<UpdateStep />
+
+			</div>
+		);
+	}
 }
 
 export default Step;

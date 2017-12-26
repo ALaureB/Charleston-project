@@ -1,26 +1,53 @@
-$font1 : 'Sriracha', cursive;
-$font2 : 'Zilla Slab Highlight', cursive;
+$font1 : 'Zilla Slab Highlight', cursive;
+$font2 : 'Sriracha', cursive;
 
 body {
-  font-family: $font1;
-  text-align: center;
+	font-family: $font2;
+	text-align: center;
 }
 
-h1 {
-  font-family: $font2;
-  font-weight: 700;
-  color : white;
-  font-size: 6em;
-  margin-top: 0px;
-  text-align: center;
-  position: relative;
-  top: 300px;
-}
-
-h2 {
-  font-size: large;
-}
-
-h3 {
-  font-family: $font2;
+.App-header {
+	background: url(".././img/charleston_background.jpg") no-repeat fixed center;
+	background-size: cover;
+	height: 450px;
+	h1 {
+		font-family: $font1;
+		font-weight: 700;
+		color : white;
+		font-size: 6em;
+		margin-top: 0px;
+		text-align: center;
+		position: relative;
+		top: 280px;
+	}
+	nav {
+		display : flex;
+  		flex-wrap: no-wrap;
+  		justify-content : center;
+  		position : relative;
+  		top: 230px;
+  		&.scrolled-nav {
+  			background-color:white;
+  			.navlink {
+  				color: black;
+  			}
+  		}
+		.navlink {
+			font-weight:700;
+			font-size : 1.2em;
+			color: white;
+			padding:5px;
+			margin: 0px 120px 0px 120px;
+			text-decoration: none;
+			span {
+				visibility: hidden;
+			}
+			&:hover {
+				span {
+					visibility: visible;
+					transition: 1s ease;
+				}
+			}
+		}
+	}
 }
