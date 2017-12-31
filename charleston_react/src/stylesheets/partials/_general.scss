@@ -4,12 +4,26 @@ $font2 : 'Sriracha', cursive;
 body {
 	font-family: $font2;
 	text-align: center;
+	color:black;
+}
+
+p {
+	font-family: serif;
+	font-size: 1.4em;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .App-header {
 	background: url(".././img/charleston_background.jpg") no-repeat fixed center;
 	background-size: cover;
 	height: 450px;
+	margin-bottom : 15px;
 	h1 {
 		font-family: $font1;
 		font-weight: 700;
@@ -21,23 +35,29 @@ body {
 		top: 280px;
 	}
 	nav {
+		padding-top: 10px;
+		padding-bottom: 10px;
 		display : flex;
-  		flex-wrap: no-wrap;
+  		flex-wrap: nowrap;
   		justify-content : center;
+  		align-items : center;
   		position : relative;
-  		top: 230px;
+  		top: 290px;
   		&.scrolled-nav {
   			background-color:white;
   			.navlink {
   				color: black;
   			}
   		}
+		#logo {
+			width:80%;
+		}
 		.navlink {
 			font-weight:700;
-			font-size : 1.2em;
+			font-size : 1.5em;
 			color: white;
 			padding:5px;
-			margin: 0px 120px 0px 120px;
+			margin: 35px 120px 0px 120px;
 			text-decoration: none;
 			span {
 				visibility: hidden;
