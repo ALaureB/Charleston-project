@@ -1,5 +1,5 @@
 $font1 : 'Zilla Slab Highlight', cursive;
-$font2 : 'Sriracha', cursive;
+$font2 : 'Poiret One', cursive;
 
 body {
 	font-family: $font2;
@@ -7,16 +7,17 @@ body {
 	color:black;
 }
 
-p {
-	font-family: serif;
-	font-size: 1.4em;
-}
-
 .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.flex_to_center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .App-header {
@@ -47,14 +48,22 @@ p {
   			background-color:white;
   			.navlink {
   				color: black;
+  				visibility: visible;
+  				transition: visibility 1s linear;
   			}
+			#logo {
+				visibility: visible;
+				transition: visibility 1s linear;
+			}			
   		}
 		#logo {
-			width:80%;
+			visibility: hidden;
+			width:95%;
 		}
 		.navlink {
-			font-weight:700;
-			font-size : 1.5em;
+			visibility: hidden;
+			font-weight:bold;
+			font-size : 1.8em;
 			color: white;
 			padding:5px;
 			margin: 35px 120px 0px 120px;

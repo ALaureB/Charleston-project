@@ -1,21 +1,36 @@
 #intro {
-	margin-right:20px;
-	margin-left: 20px;
+	margin: 20px 0;
+
 	h2 {
-	  font-size: 2.5em;
-	  margin-bottom: 30px;
+		font-size: 3.4em;
+		margin : 30px 0;
+		font-weight: bold;
 	}
-	#gif {
-	margin-top : 30px;
-	}
-	h3 {
-	margin-top:40px;
-	margin-bottom: 30px;
-	font-size:2.5em;	}
+
 	p {
-		margin-top: 15px;
+		font-size: 1.7em;
 	}
-    margin-left: 80px;
+
+	#gif {
+		margin-top: 20px;
+	}
+}
+
+h3 {
+	margin-top:40px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size:2.8em;	
+}
+
+p {
+	font-size: 1.5em;
+	margin-bottom: 0;
+}
+
+#player {
+	width:640px;
+	height:360px;
 }
 
 .card {
