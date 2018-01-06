@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch, NavLink, Link } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import logo from './img/logo.png'
 import Home from './components/Home';
 import Steps from './components/Steps';
@@ -26,7 +27,7 @@ class App extends Component {
 	render() {
 		return (
 			<BrowserRouter>
-				<div>
+				<MuiThemeProvider>
 				
 					<header>
 						<div className="container-fluid App-header">
@@ -56,7 +57,7 @@ class App extends Component {
 						</div>
 					</footer>
 
-				</div>
+				</MuiThemeProvider>
 			</BrowserRouter>
 		);
 	}

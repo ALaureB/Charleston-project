@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import CardStep from './Card';
 import gif from '../img/giphy-charleston.gif';
 import history from '../img/charleston-history.jpg';
-import jBaker from '../img/baker_charleston.jpg';
+
 
 class Home extends Component {
 
@@ -53,21 +54,14 @@ class Home extends Component {
 				<div id="lastest_publications">
 					<h3>Last steps published</h3>
 					<div className="row">
-						<div className="col-xs-3 card">
-							<img src={jBaker} alt="Img" className="poster"/>
-							<h3>Step 1</h3>
-							<hr/>
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-							<button>Read More</button>
-						</div>
-												<div className="col-xs-3 card">
-							<img src={jBaker} className="poster" alt="image_card"/>
-							<h3>Step 1</h3>
-							<hr/>
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-							<button>Read More</button>
+						<div className="col-xs-3 col-xs-offset-1">
+							<CardStep />							
 						</div>
 					</div>
+
+
+
+	
 
 
 				</div>
