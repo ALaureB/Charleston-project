@@ -1,10 +1,37 @@
 import React, { Component } from 'react';
-import CardStep from './Card';
+import Axios from 'axios';
+import CardStep from './CardStep';
 import gif from '../img/giphy-charleston.gif';
 import history from '../img/charleston-history.jpg';
 
-
 class Home extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			steps:[]
+		};
+	}
+
+	news(){
+		Axios
+			.get('http://localhost:3000/news')
+			.then(response => {
+				this.setState({
+					steps: response.data
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
+
+	componentDidMount() {
+		this.news();
+		setInterval(()=>{
+			this.news()
+		}, 1000);
+	}
 
 	render() {
 		return (
@@ -23,7 +50,7 @@ class Home extends Component {
 				<div id="history">
 					<h3>History of charleston</h3>
 						<div className="row flex_to_center">
-							<div className="col-xs-6 col-xs-offset-1">
+							<div className="col-xs-6">
 								<p className="text-justify">Charleston, as other Afro-American dances from the beginning of the 20th century, 
 								was born among Black communities of the South of the United States. This dance was created around 1900 and owes 
 								its name to the city of Charleston, South Carolina. It only gained momentum in the early 20’s in New York City and 
@@ -43,27 +70,30 @@ class Home extends Component {
 
 				<div id="baker">
 					<h3>Joséphine Baker, the Queen of charleston !</h3>
-					<div className="row">
-						<div className="embed-responsive embed-responsive-16by9 col-xs-5 col-xs-offset-1">
+					<div className="row flex_to_center">
+						<div className="embed-responsive embed-responsive-16by9 col-xs-5">
 							<iframe id="player" className="embed-responsive-item" src="https://www.youtube.com/embed/jEH6eDpjgRw" />
 						</div>
-						<p className="col-xs-4">Joséphine Baker is Known as the Queen of Charleston !</p>
+						<div className="col-xs-5">
+							<p className="text-justify">Josephine Baker was born in 1906 in St. Louis, Missouri. During her childhood, 
+							she worked as a servant and waitress. She was also a very talented dancer, actress, and singer. 
+							In 1923, Josephine Baker earned a spot on the Broadway musical « Shuffle Along ». She decided to move to paris in 1925 
+							to star in a show called « La Revue  Negre ». The show was a hit  and popularised charleston dance. Her most famous act was 
+							a dance that took place during a show called « La Folie du Jour », where she wore nothing but skirt made of bananas. 
+							During World War II, Josephine Baker was recruited to spy for the French Resistance. Because she was a famous celebrity, 
+							she was allowed to travel around Europe without being suspected. She passed on secret messages about the Germans such as 
+							troop locations and airfields using invisible ink on her sheet music. Josephine Baker returned moved back to the United States
+							in the 1950s and become a civil rigts activist. She died in 1975.</p>
+						</div>
 					</div>
 				</div>
 
 				<div id="lastest_publications">
 					<h3>Last steps published</h3>
-					<div className="row">
-						<div className="col-xs-3 col-xs-offset-1">
-							<CardStep />							
-						</div>
+					<div id="news">
+							{this.state.steps.map(item => <CardStep id={item.id} name={item.name} image={item.image} />)}
+						
 					</div>
-
-
-
-	
-
-
 				</div>
 
 

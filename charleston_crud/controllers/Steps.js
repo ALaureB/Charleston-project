@@ -8,6 +8,12 @@ module.exports = {
 			.then(results => res.send(results));
 	},
 
+	news : (req, res) => {
+		Model.Step
+			.findAll({ limit: 3, order: [['id', 'DESC']]})
+			.then(results => res.send(results));
+	},
+
 	find : (req, res) => {
 		let id = req.params.id;		
 		Model.Step
