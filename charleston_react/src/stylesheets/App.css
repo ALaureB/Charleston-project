@@ -101,6 +101,21 @@ h4 {
 .highlight {
   font-size: 1.7em; }
 
+button {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-radius: 8px;
+  width: 20%;
+  padding: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  transition: opacity 0.4s linear; }
+  button:hover {
+    opacity: 0.8;
+    transition: opacity 0.4s linear; }
+
 #intro {
   margin: 20px 0; }
   #intro #gif {
@@ -153,19 +168,6 @@ form {
   form input, form input::-webkit-input-placeholder {
     font-size: 20px;
     line-height: 3; }
-  form button {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    font-size: 1.3em;
-    border-radius: 5px;
-    width: 20%;
-    padding: 5px;
-    margin-top: 20px;
-    transition: opacity 0.4s linear; }
-    form button:hover {
-      opacity: 0.8;
-      transition: opacity 0.4s linear; }
 
 .form-control:focus {
   border-color: black;

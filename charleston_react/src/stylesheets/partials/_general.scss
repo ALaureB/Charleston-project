@@ -127,3 +127,20 @@ h4 {
 .highlight {
 	font-size: 1.7em;
 }
+
+button {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 1.3em;
+	border-radius: 8px;
+	width : 20%;
+	padding: 5px;
+	margin-top : 12px;
+	margin-bottom: 12px;
+	transition:opacity 0.4s linear;
+	&:hover {
+		opacity: 0.8;
+		transition:opacity 0.4s linear;
+	}
+}

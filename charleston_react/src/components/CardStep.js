@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-
-const style = {
-	margin: 12
-};
 
 class CardStep extends Component {
 
@@ -12,7 +7,7 @@ class CardStep extends Component {
 			<div className="card">
 				<img src={require(`../img/${this.props.image}`)} alt={this.props.image}  />
 				<h4>{this.props.name}</h4> 
-				<RaisedButton label="Click me" style={style} />
+				<button type="submit">Discover</button>
 			</div>
 		);
 	}
