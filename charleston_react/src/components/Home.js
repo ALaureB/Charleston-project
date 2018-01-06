@@ -91,7 +91,7 @@ class Home extends Component {
 				<div id="lastest_publications">
 					<h3>Last steps published</h3>
 					<div id="news">
-							{this.state.steps.map(item => <CardStep id={item.id} name={item.name} image={item.image} />)}
+							{this.state.steps.map(item => <CardStep key={item.id} name={item.name} image={item.image} />)}
 						
 					</div>
 				</div>

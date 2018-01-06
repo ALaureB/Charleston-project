@@ -27,36 +27,45 @@ class App extends Component {
 	render() {
 		return (
 			<BrowserRouter>
-				<MuiThemeProvider>
-				
-					<header>
-						<div className="container-fluid App-header">
-							<h1>Charleston steps</h1>
-							<nav className={this.state.isTop ? null : 'scrolled-nav'}>
-								<div className="col-xs-2">
-									<Link exact to="/"><img src={logo} alt="logo" id="logo" /></Link>
-								</div>
-								<div className="col-xs-10">
-									<NavLink exact to="/" activeStyle={{textDecoration: 'underline'}} className="navlink"><span role="img" aria-label="Shoes"> 👞 </span>Home</NavLink>
-									<NavLink to="/steps" activeStyle={{textDecoration: 'underline'}} className="navlink"><span role="img" aria-label="Shoes"> 👞 </span>Steps</NavLink>
-									<NavLink to="/contact" activeStyle={{textDecoration: 'underline'}} className="navlink"><span role="img" aria-label="Shoes"> 👞 </span>Contact</NavLink>
-								</div>
-							</nav>
-						</div>
-					</header>
+				<MuiThemeProvider>					
+					<div>
+						<header>
+							<div className="container-fluid App-header">
+								<Link to="/" exact="true">
+									<h1>Charleston steps</h1>
+								</Link>
+								<nav className={this.state.isTop ? null : 'scrolled-nav'}>
+									<div className="col-xs-2">
+										<Link to="/" exact="true"><img src={logo} alt="logo" id="logo" /></Link>
+									</div>
+									<div className="col-xs-10">
+										<NavLink exact to="/" activeStyle={{textDecoration: 'underline'}} className="navlink"><span role="img" aria-label="Shoes"> 👞 </span>Home</NavLink>
+										<NavLink to="/steps" activeStyle={{textDecoration: 'underline'}} className="navlink"><span role="img" aria-label="Shoes"> 👞 </span>Steps</NavLink>
+										<NavLink to="/contact" activeStyle={{textDecoration: 'underline'}} className="navlink"><span role="img" aria-label="Shoes"> 👞 </span>Contact</NavLink>
+									</div>
+								</nav>
+							</div>
+						</header>
 
-					<Switch>
-						<Route exact path="/" component={Home} />   
-						<Route path="/steps" component={Steps} />
-						<Route path="/contact" component={Contact} />        
-					</Switch>
+						<Switch>
+							<Route exact path="/" component={Home} />   
+							<Route path="/steps" component={Steps} />
+							<Route path="/contact" component={Contact} />        
+						</Switch>
 
-					<footer>
-						<div className="container-fluid">
-							<p>Footer</p>
-						</div>
-					</footer>
-
+						<footer>
+							<div className="container-fluid">
+								<div className="row flex_to_center">
+									<div className="col-xs-2">
+										<Link to="/" exact="true"><img src={logo} alt="logo" id="logo" /></Link>
+									</div>
+									<div className="col-xs-10">
+										<p>Made with ❤ in ReactJS for <a href="https://wildcodeschool.fr/" target="_blank" rel="noopener noreferrer">Wild Code School</a></p>
+									</div>
+								</div>						
+							</div>
+						</footer>
+					</div>
 				</MuiThemeProvider>
 			</BrowserRouter>
 		);
