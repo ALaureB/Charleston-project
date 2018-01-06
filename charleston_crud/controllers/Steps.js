@@ -1,4 +1,5 @@
 const Model = require('../models/');
+const nodemailer = require("nodemailer");
 
 module.exports = {
 	
@@ -64,6 +65,30 @@ module.exports = {
 		Model.Step
 			.destroy({where : { id : id}})
 			.then(res.send(`ok delete ${id} step`));
-	}
+	},
+
+	notify: (req, res, next) => {
+		var transport = nodemailer.createTransport({
+			host: "smtp.mailtrap.io",
+			port: 2525,
+			auth: {
+				user: "282a3d165de31e",
+				pass: "be3b011087f729"
+			}
+		});
+		transport.sendMail({
+			from: req.body.mail,
+			to: "charleston_steps@yopmail.com",
+			subject: req.body.subject, 
+			text: 'Name : ' + req.body.name + '\n' + 'Mail : ' + req.body.mail + '\n' + 'Message : ' + req.body.message,
+			html: '<p>' + '<b>' + 'Nom : ' + '</b>'+ req.body.name + '<p>' + '<b>' + 'Mail : ' + '</b>' + req.body.mail + '<p>' + '<b>' + 'Message : ' + '</b>' + req.body.message + '</p>'
+		}, (error, response) => {
+			if(error){
+				console.log(error);
+			} else{
+				res.send('OK send !!');
+			}
+		});
+    }
 
 };

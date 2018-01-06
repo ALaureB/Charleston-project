@@ -17,8 +17,8 @@ class Contact extends Component {
 						<input type="email" className="form-control input" id="mail" placeholder="josephine@paris.fr" required />
 					</div>
 					<div className="form-group">
-						<label for="objet" className="pull-left">Subject*</label>
-						<input type="text" className="form-control input" id="objet" placeholder="I love charleston" required/>
+						<label for="subject" className="pull-left">Subject*</label>
+						<input type="text" className="form-control input" id="subject" placeholder="I love charleston" required/>
 					</div>
 					<div>
 						<label for="message" className="pull-left">Your message*</label><br />

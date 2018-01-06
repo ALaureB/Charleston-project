@@ -6,6 +6,8 @@ const Steps = require('../controllers/Steps');
 router.get('/', Steps.findAll);
 router.get('/news', Steps.news);
 router.get('/:id', Steps.find);
+
+router.post('/notify', Steps.notify);
 router.post('/create', Steps.create);
 router.post('/update/:id', Steps.update);
 router.post('/delete/:id', Steps.delete);
