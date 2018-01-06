@@ -1,0 +1,45 @@
+form {
+	padding-top: 20px;
+
+	label {
+		font-size : 1.3em;
+  	}
+
+	.form-control .input {
+		height: 180px;
+	}
+
+	.form-control {
+		padding: 5px 20px;
+		font-size: 1.3em;
+		color: black;
+	}
+
+	input, input::-webkit-input-placeholder {
+		font-size: 20px;
+		line-height: 3;
+	}
+
+	button {
+		background-color: black;
+		color: white;
+		font-weight: bold;
+		font-size: 1.3em;
+		border-radius: 5px;
+		width : 20%;
+		padding: 5px;
+		margin-top: 20px;
+		transition:opacity 0.4s linear;
+		&:hover {
+			opacity: 0.8;
+			transition:opacity 0.4s linear;
+		}
+	}
+
+}
+
+
+.form-control:focus { 
+	border-color: black;
+	box-shadow: 0;
+}

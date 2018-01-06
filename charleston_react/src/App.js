@@ -62,7 +62,7 @@ class App extends Component {
 									<div className="col-xs-10">
 										<p>Made with ❤ in ReactJS for <a href="https://wildcodeschool.fr/" target="_blank" rel="noopener noreferrer">Wild Code School</a></p>
 									</div>
-								</div>						
+								</div>
 							</div>
 						</footer>
 					</div>

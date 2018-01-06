@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import TypeWriter from 'react-typewriter';
 import CardStep from './CardStep';
 import gif from '../img/giphy-charleston.gif';
 import history from '../img/charleston-history.jpg';
@@ -37,9 +38,9 @@ class Home extends Component {
 		return (
 			<div>
 				<div id="intro">
-					<h2> ~ Embark with us on a magical journey into charleston ~ </h2>
+					<TypeWriter typing={1} fixed={true}><h2> ~ Embark with us on a magical journey into charleston ~ </h2></TypeWriter>
 					<div className="row">
-						<p className="col-xs-8 col-xs-offset-2 text-justify">Charleston, as a dance, was born in the South of the United States 
+						<p className="col-xs-8 col-xs-offset-2 text-justify highlight">Charleston, as a dance, was born in the South of the United States 
 						at the beginning of the 1900’s. It is based on body weight shifting from one leg to the other and can be danced 
 						solo, with a partner or in groups. Charleston inspired most of modern dances... let's discover this swinggy 
 						universe !</p>

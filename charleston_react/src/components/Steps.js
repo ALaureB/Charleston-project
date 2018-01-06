@@ -39,6 +39,7 @@ class Steps extends Component {
 	render() {
 		return (
 			<div>
+				<h2> ~ Steps ~</h2>
 
 				{this.state.items.map(item => <Step id={item.id} name={item.name} description={item.description} image={item.image} video={item.video} updatingData={this.handleDemand.bind(this)} />)}
 				<CreateStep updatingData={this.handleDemand.bind(this)}/>
