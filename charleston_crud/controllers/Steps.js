@@ -77,11 +77,11 @@ module.exports = {
 			}
 		});
 		transport.sendMail({
-			from: req.body.mail,
+			from: req.body.name,
 			to: "charleston_steps@yopmail.com",
-			subject: req.body.subject, 
-			text: 'Name : ' + req.body.name + '\n' + 'Mail : ' + req.body.mail + '\n' + 'Message : ' + req.body.message,
-			html: '<p>' + '<b>' + 'Nom : ' + '</b>'+ req.body.name + '<p>' + '<b>' + 'Mail : ' + '</b>' + req.body.mail + '<p>' + '<b>' + 'Message : ' + '</b>' + req.body.message + '</p>'
+			subject: req.body.subject,
+			text: 'Name : ' + req.body.name + '\n' + 'Mail : ' + req.body.mail + '\n' + 'Subject : ' + req.body.subject + '\n' + 'Message : ' + req.body.message,
+			html: '<p>' + '<b>' + 'Nom : ' + '</b>'+ req.body.name + '<p>' + '<b>' + 'Mail : ' + '</b>' + req.body.mail + '<p>' + '<b>' + 'Subject : ' + '</b>'+ req.body.subject + '<p>' + '<b>' + 'Message : ' + '</b>' + req.body.message + '</p>'
 		}, (error, response) => {
 			if(error){
 				console.log(error);
@@ -89,6 +89,6 @@ module.exports = {
 				res.send('OK send !!');
 			}
 		});
-    }
+	}
 
 };

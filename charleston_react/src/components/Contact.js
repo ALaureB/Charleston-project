@@ -67,7 +67,9 @@ class Contact extends Component {
 					<div>
 						<label for="message" className="pull-left">Your message*</label><br />
 						<textarea className="form-control" name="message" rows="6" placeholder="How do you do Shorty George ?" maxLength="400" onChange={this.handleChange} required></textarea>
-					</div>					
+					</div>
+					<div className="g-recaptcha" data-sitekey="6Lefpj8UAAAAADLJJ7uHoQ1s71SiSORr4jxKGd8v"></div>					
+					<hr/>
 					<button type="submit">Envoyer</button>
 					<p className="text-left">*All fields are mandatory !</p>
 				</form> 

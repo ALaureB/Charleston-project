@@ -175,3 +175,6 @@ form {
 .form-control:focus {
   border-color: black;
   box-shadow: 0; }
+
+.g-recaptcha {
+  margin-top: 15px; }
