@@ -42,7 +42,7 @@ class Steps extends Component {
 			<div>
 				<HighlightedStep/>
 				<div className="card_container">
-					{this.state.items.map(item => <CardStep key={item.id} name={item.name} image={item.image} />)}
+					{this.state.items.map(item => <CardStep key={item.id} id={item.id} name={item.name} image={item.image} />)}
 				</div>
 				<Link to="/create" exact="true"><button style={{marginTop:'30px'}}>Create a new step</button></Link>
 			</div>
