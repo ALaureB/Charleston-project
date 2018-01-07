@@ -7,6 +7,7 @@ import Steps from './components/Steps';
 import Contact from './components/Contact';
 import Confirmation from './components/Confirmation';
 import CreateStep from './components/CreateStep';
+import ConfirmationStep from './components/ConfirmationStep';
 import './stylesheets/App.css';
 
 class App extends Component {
@@ -54,7 +55,8 @@ class App extends Component {
 							<Route path="/steps" component={Steps} />
 							<Route path="/contact" component={Contact} />
 							<Route path="/create" component={CreateStep} />
-							<Route path="/confirmation" component={Confirmation} />       
+							<Route path="/confirmation" component={Confirmation} />
+							<Route path="/confirmationstep" component={ConfirmationStep} />    
 						</Switch>
 
 						<footer>

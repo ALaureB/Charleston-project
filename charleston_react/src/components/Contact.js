@@ -37,15 +37,14 @@ class Contact extends Component {
 	}
 
 	render() {
+
 		const { redirect } = this.state;
-
- 		if (redirect) {
-      		return (
-        		<Redirect to="/confirmation"/>
-      		)
-    	}
+		if (redirect) {
+			return (
+				<Redirect to="/confirmation"/>
+			)
+		}
     
-
 		return (
 			<div className="container">
 				<h2> ~ Contact ~</h2>

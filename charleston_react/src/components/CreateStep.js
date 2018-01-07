@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import Axios from 'axios';
 
 class CreateStep extends Component {
@@ -9,7 +10,8 @@ class CreateStep extends Component {
 			name: '',
 			description: '',
 			image: '',
-			video: ''
+			video: '',
+			redirect: false
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,19 +30,25 @@ class CreateStep extends Component {
 			image: this.state.image,
 			video : this.state.video
 		})
-		.then(function (response) {
-			this.props.updatingData();
-		})
+		.then(() => this.setState({ redirect: true }))
 		.catch(function (error) {
 			console.log(error);
 		});
 	}
 
 	render() {
+
+		const { redirect } = this.state;
+		if (redirect) {
+			return (
+				<Redirect to="/confirmationstep"/>
+			)
+		}
+
 		return (
 			<div className="container">
 				<h2> ~ Create a new step ~</h2>
-				<p className="highlight">To add a step to the database, plase fill this form</p>
+				<p className="highlight">To add a step to the database, plase fill this form.</p>
 
 				<form className="col-xs-8 col-xs-offset-2" onSubmit={this.handleSubmit}>
 					<div className="form-group">
@@ -53,11 +61,11 @@ class CreateStep extends Component {
 					</div>
 					<div className="form-group">
 						<label for="image" className="pull-left">Image*</label>
-						<input type="text" className="form-control input" name="image" placeholder="Pink the cherries" onChange={this.handleChange} required />
+						<input type="text" className="form-control input" name="image" placeholder="pink_the_cherries.jpg" onChange={this.handleChange} required />
 					</div>
 					<div className="form-group">
-						<label for="video" className="pull-left">Image*</label>
-						<input type="text" className="form-control input" name="video" placeholder="Pink the cherries" onChange={this.handleChange} required />
+						<label for="video" className="pull-left">Video*</label>
+						<input type="text" className="form-control input" name="video" placeholder="https://www.youtube.com/watch?" onChange={this.handleChange} required />
 					</div>				
 					<button type="submit">Envoyer</button>
 					<p className="text-left">*All fields are mandatory !</p>
