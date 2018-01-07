@@ -40,7 +40,6 @@ class Steps extends Component {
 	render() {
 		return (
 			<div>
-				<h2> ~ Steps ~</h2>
 				<HighlightedStep/>
 				<div className="card_container">
 					{this.state.items.map(item => <CardStep key={item.id} name={item.name} image={item.image} />)}

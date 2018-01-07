@@ -47,23 +47,23 @@ class Home extends Component {
 
 				<div id="history">
 					<h3>History of charleston</h3>
-						<div className="row flex_to_center">
-							<div className="col-xs-6">
-								<p className="text-justify">Charleston, as other Afro-American dances from the beginning of the 20th century, 
-								was born among Black communities of the South of the United States. This dance was created around 1900 and owes 
-								its name to the city of Charleston, South Carolina. It only gained momentum in the early 20’s in New York City and 
-								ore precisely in Harlem. Black dancers were fashionable at the time in New York in either black or mixed revues, 
-								such as “Shuffle along”, “The Blackbirds”, “Zieffield folies”, and featured famous dancers such as Eddie Rector, 
-								Bill Robinson, John Bubbles, Baby Laurence or King Brown. It really became popular in the United States in 1923, 
-								after a black only revue performed on Broadway: Runnin' Wild (Charleston music from James P. Johnson).  
-								In France, it was only in 1925 that it became known with the first Revue Nègre, in the Théâtre des Champs-Élysées 
-								of Paris, starring Sidney Bechet and Josephine Baker who was then making her debut. In the 20’s, Charleston thus 
-								became the reference dance in the United States and in Europe.</p>
-							</div>
-							<div className="col-xs-4">
-								<img src={history} alt="Some Charleston Dancers in the United States" />
-							</div>
+					<div className="row flex_to_center">
+						<div className="col-xs-6">
+							<p className="text-justify">Charleston, as other Afro-American dances from the beginning of the 20th century, 
+							was born among Black communities of the South of the United States. This dance was created around 1900 and owes 
+							its name to the city of Charleston, South Carolina. It only gained momentum in the early 20’s in New York City and 
+							ore precisely in Harlem. Black dancers were fashionable at the time in New York in either black or mixed revues, 
+							such as “Shuffle along”, “The Blackbirds”, “Zieffield folies”, and featured famous dancers such as Eddie Rector, 
+							Bill Robinson, John Bubbles, Baby Laurence or King Brown. It really became popular in the United States in 1923, 
+							after a black only revue performed on Broadway: Runnin' Wild (Charleston music from James P. Johnson).  
+							In France, it was only in 1925 that it became known with the first Revue Nègre, in the Théâtre des Champs-Élysées 
+							of Paris, starring Sidney Bechet and Josephine Baker who was then making her debut. In the 20’s, Charleston thus 
+							became the reference dance in the United States and in Europe.</p>
 						</div>
+						<div className="col-xs-4">
+							<img src={history} alt="Some Charleston Dancers in the United States" />
+						</div>
+					</div>
 				</div>
 
 				<div id="baker">
@@ -89,17 +89,11 @@ class Home extends Component {
 				<div id="lastest_publications">
 					<h3>Last steps published</h3>
 					<div id="news">
-							{this.state.steps.map(item => <CardStep key={item.id} name={item.name} image={item.image} />)}
-						
+						{this.state.steps.map(item => <CardStep key={item.id} name={item.name} image={item.image} />)}						
 					</div>
 				</div>
 
-
-			
 			</div>
-
-
-
 
 		);
 	}
