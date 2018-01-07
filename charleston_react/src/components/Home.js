@@ -29,9 +29,6 @@ class Home extends Component {
 
 	componentDidMount() {
 		this.news();
-		setInterval(()=>{
-			this.news()
-		}, 1000);
 	}
 
 	render() {

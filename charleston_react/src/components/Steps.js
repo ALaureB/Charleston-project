@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import Step from './Step';
-import CreateStep from './CreateStep';
+import HighlightedStep from './HighlightedStep';
+import CardStep from './CardStep';
+import { Link } from 'react-router-dom';
 
 class Steps extends Component {
 
@@ -40,10 +41,11 @@ class Steps extends Component {
 		return (
 			<div>
 				<h2> ~ Steps ~</h2>
-
-				{this.state.items.map(item => <Step id={item.id} name={item.name} description={item.description} image={item.image} video={item.video} updatingData={this.handleDemand.bind(this)} />)}
-				<CreateStep updatingData={this.handleDemand.bind(this)}/>
-
+				<HighlightedStep/>
+				<div className="card_container">
+					{this.state.items.map(item => <CardStep key={item.id} name={item.name} image={item.image} />)}
+				</div>
+				<Link to="/create" exact="true"><button style={{marginTop:'30px'}}>Create a new step</button></Link>
 			</div>
 		);
 	}

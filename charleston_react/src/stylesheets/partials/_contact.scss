@@ -2,17 +2,18 @@ form {
 	padding-top: 20px;
 
 	label {
-		font-size : 1.3em;
+		font-size : 1.2em;
   	}
 
-	.form-control .input {
-		height: 180px;
+	.input {
+		height: 40px;
 	}
 
 	.form-control {
 		padding: 5px 20px;
 		font-size: 1.3em;
 		color: black;
+
 	}
 
 	input, input::-webkit-input-placeholder {

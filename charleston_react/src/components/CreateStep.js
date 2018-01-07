@@ -38,26 +38,31 @@ class CreateStep extends Component {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<div className="container">
+				<h2> ~ Create a new step ~</h2>
+				<p className="highlight">To add a step to the database, plase fill this form</p>
 
-				<label>Nom : </label>
-				<input type="text" name="name" onChange={this.handleChange} />
-				<br/>
-
-				<label>Description : </label>
-				<input type="text" name="description" onChange={this.handleChange} />
-				<br/>
-
-				<label>Image : </label>
-				<input type="text" name="image" onChange={this.handleChange} />
-				<br/>
-
-				<label>Vidéo : </label>
-				<input type="text" name="video" onChange={this.handleChange} />
-				<br/>
-
-				<input type="submit" value="Submit" />
-			</form>
+				<form className="col-xs-8 col-xs-offset-2" onSubmit={this.handleSubmit}>
+					<div className="form-group">
+						<label for="name" className="pull-left">Name*</label>
+						<input type="text" className="form-control input" name="name" placeholder="Pink the cherries" onChange={this.handleChange} required />
+					</div>
+					<div>
+						<label for="description" className="pull-left">Description*</label><br />
+						<textarea className="form-control" name="description" rows="6" placeholder="To pink the cherries...." maxlength="400" onChange={this.handleChange} required></textarea>
+					</div>
+					<div className="form-group">
+						<label for="image" className="pull-left">Image*</label>
+						<input type="text" className="form-control input" name="image" placeholder="Pink the cherries" onChange={this.handleChange} required />
+					</div>
+					<div className="form-group">
+						<label for="video" className="pull-left">Image*</label>
+						<input type="text" className="form-control input" name="video" placeholder="Pink the cherries" onChange={this.handleChange} required />
+					</div>				
+					<button type="submit">Envoyer</button>
+					<p className="text-left">*All fields are mandatory !</p>
+				</form> 
+			</div>
 		);
 	}
 }
